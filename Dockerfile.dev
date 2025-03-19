@@ -1,0 +1,25 @@
+FROM node:lts-alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
+# docker build -f Dockerfile.dev .
+# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app {container-id}
+
+# docker compose up
+
+# docker run -it {container-id} npm run test
+
+# docker compose up
+# docker exec -it {container-id} npm run test
+
+# docker compose up --build
+# docker ps
+# Not going to work because it attaches to the primary process...
+# docker attach {container-id}
