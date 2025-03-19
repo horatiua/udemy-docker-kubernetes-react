@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run -e CI=true horatiuandrei/udemy-docker-kubernetes-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "udemy-docker-kubernetes-react"
+  env: "Udemy-docker-kubernetes-react-env"
+  bucket: "elasticbeanstalk-ap-southeast-1-208838686419"
+  bucket_path: "udemy-docker-kubernetes-react"
+  on:
+    branch: master

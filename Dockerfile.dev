@@ -23,3 +23,7 @@ CMD ["npm", "run", "start"]
 # docker ps
 # Not going to work because it attaches to the primary process...
 # docker attach {container-id}
+
+# docker-compose -f docker-compose-dev.yml up
+# docker-compose -f docker-compose-dev.yml up --build
+# docker-compose -f docker-compose-dev.yml down
